@@ -270,7 +270,7 @@
                  (let [k (lift-meta-content* ctx k)]
                    (cond (:k k)
                          (let [key-name (keyword (name (:k k)))
-                               ns-modifier? (one-of key-name [:keys :syms :strs])]
+                               ns-modifier? (one-of key-name [:keys :syms :strs :flds])]
                            (if ns-modifier?
                              (do (analyze-usages2 ctx k (assoc opts :keys-destructuring-ns-modifier? true))
                                  (recur rest-kvs
